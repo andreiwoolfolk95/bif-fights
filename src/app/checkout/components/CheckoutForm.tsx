@@ -4,10 +4,11 @@ import { priceDetails } from "@/utilis/prices";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import InputMask from "react-input-mask";
-
+import { useSession } from "next-auth/react";
 declare let window: any;
 
 export default function PaymentComponent() {
+  const session = useSession();
   const [loading, setLoading] = useState(false);
   const [divisa, setDivisa] = useState("MXN");
   const [card, setCard] = useState<any>({
