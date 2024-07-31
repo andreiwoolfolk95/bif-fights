@@ -1,0 +1,123 @@
+.checkout-container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  padding: 40px;
+  .left {
+    img {
+      width: 150px;
+    }
+    .event-container {
+      display: flex;
+      gap: 80px;
+      justify-content: center;
+    }
+    .event {
+      background-color: #1f2533;
+      padding: 20px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      p,
+      h2,
+      h3 {
+        color: #fff;
+      }
+      .info {
+        background-color: #f3b41b;
+        border-radius: 10px;
+        .top {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+        }
+        .bottom {
+          display: flex;
+          background-color: #fff;
+          padding: 10px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          justify-content: flex-end;
+          p {
+            align-self: flex-end;
+            color: #1f2533;
+            cursor: pointer;
+            border-bottom: 1px solid;
+            width: fit-content;
+            font-weight: bold;
+            font-size: 12px;
+          }
+        }
+      }
+      .price-container {
+        display: flex;
+        justify-content: space-between;
+        h3 {
+          font-size: 1.4rem;
+        }
+      }
+      .line {
+        height: 1px;
+        background-color: #fff;
+        width: 100%;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 500px;
+      gap: 10px;
+      .input-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        input {
+          padding: 10px;
+          border: 2px solid #e4e4e4;
+          border-radius: 10px;
+          &:focus {
+            border: 2px solid #f3b41b;
+            outline: none;
+          }
+        }
+      }
+      .input-container-custom {
+        display: flex;
+        flex-direction: column;
+        input {
+          padding: 10px;
+          border: 2px solid #e4e4e4;
+          &:focus {
+            border: 2px solid #f3b41b;
+            outline: none;
+          }
+        }
+        input.top {
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+        .bottom {
+          display: flex;
+          input.left {
+            width: 100%;
+            border-bottom-left-radius: 10px;
+          }
+          input.right {
+            width: 100%;
+            border-bottom-right-radius: 10px;
+          }
+        }
+      }
+      button {
+        margin-top: 10px;
+        color: #fff;
+        border-radius: 15px;
+        background-color: #1f2533;
+        padding: 10px;
+      }
+    }
+  }
+}

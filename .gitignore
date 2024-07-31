@@ -34,3 +34,26 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCGUV3IZY-VX1sChebQbg33Zjb17fQChPc",
+  authDomain: "bif-fight.firebaseapp.com",
+  projectId: "bif-fight",
+  storageBucket: "bif-fight.appspot.com",
+  messagingSenderId: "980732728798",
+  appId: "1:980732728798:web:0e978223aaa31a7908b94f",
+  measurementId: "G-LMQJ5CEVWD"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);

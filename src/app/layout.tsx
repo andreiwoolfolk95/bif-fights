@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Montserrat } from "next/font/google";
+import { Toaster } from "react-hot-toast";
+import "./globals.scss";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"], // Add the weights you want to use
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <script
+          type="text/javascript"
+          src="https://cdn.conekta.io/js/latest/conekta.js"
+        ></script>
+      </head>
+      <body className={montserrat.className}>
+        <Toaster />
+        <div className="main-container">{children}</div>
+      </body>
     </html>
   );
 }
