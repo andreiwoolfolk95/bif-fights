@@ -1,8 +1,8 @@
 "use client";
 import { SpinnerLoader } from "@/components/SpinnerLoader/SpinnerLoader";
+import signUp, { signIn } from "@/services/auth/auth";
 import { authErrors } from "@/utilis/Errors/auth";
 import { useFormik } from "formik";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -24,32 +24,23 @@ export const FormComponent = () => {
     initialValues: initialValues,
     validationSchema: validationSchema,
     onSubmit: async (values) => {
-      // setLoading(true);
+      setLoading(true);
       const body = {
         ...values,
       };
-      const test = await signIn("credentials", {
-        email: values.email,
-        password: values.password,
-        redirect: true,
-        callbackUrl: "/",
-      });
-      console.log(test);
-
-      // if (error) {
-      //   setLoading(false);
-      //   return toast.error(authErrors(error));
-      // }
-      // console.log(result);
-
-      // router.push("/");
+      const { result, error } = await signIn(values.email, values.password);
+      if (error) {
+        setLoading(false);
+        return toast.error(authErrors(error));
+      }
     },
   });
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      {/* <img src="/assets/logos/logo.jpeg" alt="" /> */}
+      <img src="/assets/logos/logo.jpeg" alt="" />
       <h2>Inicia sesión</h2>
+      <p>Que esperas para ver la pelea</p>
       <div className="login-input"></div>
       <div className="login-input">
         <span className="input-span">

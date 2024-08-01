@@ -8,7 +8,13 @@ export default function RegisterPage() {
   });
   return (
     <div className="auth-container">
-      <VideoPlayer />
+      <VideoPlayer
+        url="/assets/videos/authVideo.mp4"
+        width="75%"
+        loop={true}
+        muted={true}
+        controls={false}
+      />
       <FormComponent />
     </div>
   );

@@ -41,7 +41,7 @@ export const FormComponent = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      {/* <img src="/assets/logos/logo.jpeg" alt="" /> */}
+      <img src="/assets/logos/logo.jpeg" alt="" />
       <h2>Crear una cuenta nueva</h2>
       <div className="login-input">
         <span className="input-span">

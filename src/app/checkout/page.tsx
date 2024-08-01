@@ -6,7 +6,6 @@ export default function CheckoutPage() {
   return (
     <div className="checkout-container">
       <div className="left">
-        <img src="/assets/logos/logo.jpeg" alt="bif" />
         <PaymentComponent />
       </div>
     </div>

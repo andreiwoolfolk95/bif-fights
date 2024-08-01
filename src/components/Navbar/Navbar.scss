@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #1f2533;
+  align-items: center;
+  .user-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    p {
+      color: #fff;
+      text-transform: capitalize;
+    }
+  }
+  button {
+    border-radius: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 5px;
+  }
+  img {
+    width: 50px;
+    border-radius: 10px;
+  }
+}

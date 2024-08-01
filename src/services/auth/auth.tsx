@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 import axios from "axios";
 import { onMerge } from "../firebase";
@@ -54,5 +55,14 @@ async function createConektaUser(body: any) {
     return response.data;
   } catch (error) {
     return error;
+  }
+}
+
+export async function logOut() {
+  try {
+    await signOut(auth);
+    return true;
+  } catch (error) {
+    console.log(error);
   }
 }

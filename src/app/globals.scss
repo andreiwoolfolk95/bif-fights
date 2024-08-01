@@ -146,3 +146,19 @@ button.yellow {
     }
   }
 }
+.home-container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding-block: 50px;
+  padding-inline: 6rem;
+  gap: 10px;
+  height: 100%;
+  p,
+  h2 {
+    color: #000;
+  }
+  video {
+    border-radius: 6px;
+  }
+}

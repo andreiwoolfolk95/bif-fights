@@ -4,13 +4,16 @@ import { priceDetails } from "@/utilis/prices";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import InputMask from "react-input-mask";
-import { useSession } from "next-auth/react";
+import { useUser } from "@/app/context/UserContext";
+import { paymentEvent } from "@/services/checkout/checkout";
+import { SpinnerLoader } from "@/components/SpinnerLoader/SpinnerLoader";
+import { onMerge } from "@/services/firebase";
 declare let window: any;
 
 export default function PaymentComponent() {
-  const session = useSession();
   const [loading, setLoading] = useState(false);
   const [divisa, setDivisa] = useState("MXN");
+  const { user } = useUser();
   const [card, setCard] = useState<any>({
     name: "",
     number: "",
@@ -45,10 +48,31 @@ export default function PaymentComponent() {
     );
   };
 
-  const conektaSuccessResponseHandler = (token: any) => {
+  const conektaSuccessResponseHandler = async (token: any) => {
     let tokenId = token.id;
-    console.log(tokenId);
+    const body = {
+      customer_id: user.conekta_id,
+      tokenId: tokenId,
+      amount: parseInt(total) * 100,
+    };
+
+    try {
+      const result = await paymentEvent(body);
+      const obj = {
+        data: {
+          payment: true,
+        },
+        id: user.id,
+        collection_name: "users",
+      };
+      toast.success("Gracias por su compra");
+      await onMerge(obj);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
   };
+
   const conektaErrorResponseHandler = (response: any) => {
     toast.error("Revise los datos de su tarjeta");
     setLoading(false);
@@ -138,7 +162,7 @@ export default function PaymentComponent() {
           </div>
         </div>
         <button type="submit" onClick={handlePayment}>
-          Pagar
+          {!loading ? "Pagar" : <SpinnerLoader color="#fff" size={30} />}
         </button>
       </form>
     </div>
