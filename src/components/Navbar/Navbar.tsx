@@ -19,6 +19,9 @@ export const Navbar = () => {
     if (!loading && user === null && pathname === "/") {
       router.push("/login");
     }
+    if (!loading && user === null && pathname === "/checkout") {
+      router.push("/login");
+    }
   }, [user, loading]);
 
   return (

@@ -25,6 +25,7 @@ export default async function signUp(body: any) {
   let result = null,
     error = null;
   try {
+    const response = await createConektaUser(body);
     result = await createUserWithEmailAndPassword(
       auth,
       body.email,
@@ -33,7 +34,6 @@ export default async function signUp(body: any) {
     const data: any = { ...body };
     const id = result.user.uid;
     delete data.password;
-    const response = await createConektaUser(body);
     data.conekta_id = response.id;
 
     const obj = {
@@ -54,7 +54,7 @@ async function createConektaUser(body: any) {
     const response = await axios.post(`/api/auth/register`, body);
     return response.data;
   } catch (error) {
-    return error;
+    throw error;
   }
 }
 

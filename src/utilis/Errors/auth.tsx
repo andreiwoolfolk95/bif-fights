@@ -1,5 +1,4 @@
 export const authErrors = (error: string) => {
-  console.log(error);
   if (error === "auth/invalid-email") {
     return "El correo ingresado no es válido";
   }
@@ -14,6 +13,12 @@ export const authErrors = (error: string) => {
   }
   if (error === "auth/too-many-requests") {
     return "Muchos intentos fallidos, intente mas tarde";
+  }
+  if (error === "ERR_BAD_RESPONSE") {
+    return "Hubo un error";
+  }
+  if (error === "auth/invalid-credential") {
+    return "Contraseña o correo incorrecto";
   }
   return error;
 };
