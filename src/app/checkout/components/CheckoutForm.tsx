@@ -22,7 +22,9 @@ export default function PaymentComponent() {
   });
 
   useEffect(() => {
-    window.Conekta.setPublicKey("key_IzhjbwO2AH3ta0DjAGuxRMu");
+    window.Conekta.setPublicKey(
+      `${process.env.NEXT_PUBLIC_CONEKTA_PUBLIC_KEY}`
+    );
   }, []);
 
   const { title, price, total, subtotal, iva } =
