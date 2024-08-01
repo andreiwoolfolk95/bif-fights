@@ -23,7 +23,7 @@ export const Navbar = () => {
 
   return (
     <>
-      {!loading && pathname === "/" && (
+      {!loading && pathname !== "/login" && pathname !== "/register" && (
         <nav>
           <img src="/assets/logos/logo.jpeg" alt="bif" />
           {user && user.name ? (

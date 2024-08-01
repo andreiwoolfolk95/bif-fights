@@ -35,7 +35,7 @@ export const FormComponent = () => {
         setLoading(false);
         return toast.error(authErrors(error));
       }
-      router.push("/");
+      router.push("/checkout");
     },
   });
 
