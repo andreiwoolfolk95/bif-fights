@@ -3,14 +3,12 @@ import { SpinnerLoader } from "@/components/SpinnerLoader/SpinnerLoader";
 import signUp, { signIn } from "@/services/auth/auth";
 import { authErrors } from "@/utilis/Errors/auth";
 import { useFormik } from "formik";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import * as YUP from "yup";
 
 export const FormComponent = () => {
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
   const initialValues = {
     email: "",
     password: "",

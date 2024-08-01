@@ -12,6 +12,9 @@
       display: flex;
       gap: 80px;
       justify-content: center;
+      @media (max-width: 1000px) {
+        flex-wrap: wrap;
+      }
     }
     .event {
       background-color: #1f2533;
@@ -117,6 +120,11 @@
         border-radius: 15px;
         background-color: #1f2533;
         padding: 10px;
+      }
+      img {
+        width: 100%;
+        max-width: 250px;
+        align-self: center;
       }
     }
   }

@@ -158,7 +158,13 @@ button.yellow {
   h2 {
     color: #000;
   }
+  @media (max-width: 1000px) {
+    padding-inline: 1rem;
+  }
   video {
     border-radius: 6px;
+    @media (max-width: 1000px) {
+      height: auto !important;
+    }
   }
 }

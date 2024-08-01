@@ -166,6 +166,7 @@ export default function PaymentComponent() {
         <button type="submit" onClick={handlePayment}>
           {!loading ? "Pagar" : <SpinnerLoader color="#fff" size={30} />}
         </button>
+        <img src="/assets/logos/logo.jpeg" alt="bif" />
       </form>
     </div>
   );
