@@ -10,7 +10,7 @@ export default function Home() {
     <div className="home-container">
       <h2>World kick boxing council event</h2>
       <VideoPlayer
-        url="https://servidorcadefi.inowu.dev/live/hls/live.m3u8"
+        url="https://servidorcadefi.inowu.dev/live/hls/respaldo.m3u8"
         width="100%"
         loop={false}
         muted={false}
