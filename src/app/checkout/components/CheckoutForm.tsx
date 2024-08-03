@@ -56,6 +56,7 @@ export default function PaymentComponent() {
       customer_id: user.conekta_id,
       tokenId: tokenId,
       amount: parseInt(total) * 100,
+      divisa,
     };
 
     try {

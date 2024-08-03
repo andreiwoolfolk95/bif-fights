@@ -23,6 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>WKC</title>
+        <link rel="icon" href="/assets/logos/logo.jpeg" />
         <script
           type="text/javascript"
           src="https://cdn.conekta.io/js/latest/conekta.js"

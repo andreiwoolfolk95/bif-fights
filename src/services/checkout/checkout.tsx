@@ -4,6 +4,7 @@ type TOrder = {
   customer_id: string;
   tokenId: string;
   amount: number;
+  divisa: string;
 };
 export const paymentEvent = async (body: TOrder) => {
   console.log(body);
@@ -17,7 +18,7 @@ export const paymentEvent = async (body: TOrder) => {
         amount: body.amount,
       },
     ],
-    currency: "MXN",
+    currency: body.divisa,
     line_items: [{ name: "evento", quantity: 1, unit_price: body.amount }],
   };
   try {
