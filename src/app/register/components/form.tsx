@@ -31,6 +31,7 @@ export const FormComponent = () => {
         ...values,
       };
       const { result, error } = await signUp(body);
+      console.log(error);
       if (error) {
         setLoading(false);
         return toast.error(authErrors(error));

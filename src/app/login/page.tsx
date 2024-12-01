@@ -9,7 +9,7 @@ export default function LoginPage() {
   return (
     <div className="auth-container">
       <VideoPlayer
-        url="/assets/videos/authVideo.mp4"
+        url="https://servidorcadefi.inowu.dev/media/2021/INOWUV/BIF/index.m3u8"
         width="75%"
         loop={true}
         muted={true}

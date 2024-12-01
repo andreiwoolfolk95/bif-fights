@@ -33,6 +33,6 @@ export const paymentEvent = async (body: TOrder) => {
     return response.data;
   } catch (err) {
     console.log(err);
-    return err;
+    throw err;
   }
 };

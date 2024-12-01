@@ -28,7 +28,7 @@ export const Navbar = () => {
     <>
       {!loading && pathname !== "/login" && pathname !== "/register" && (
         <nav>
-          <img src="/assets/logos/logo.jpeg" alt="bif" />
+          <img src="/logo.png" alt="bif" />
           {user && user.name ? (
             <div className="user-container">
               <p>{user.name}</p>

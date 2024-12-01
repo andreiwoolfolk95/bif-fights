@@ -1,6 +1,5 @@
 "use client";
 import dynamic from "next/dynamic";
-import ReactPlayer from "react-player";
 
 export default function Home() {
   const VideoPlayer = dynamic(() => import("../components/video/video"), {
@@ -8,9 +7,9 @@ export default function Home() {
   });
   return (
     <div className="home-container">
-      <h2>World kick boxing council event</h2>
+      <h2>Bif 4: El evento empieza el día 30 de noviembre a las 5pm</h2>
       <VideoPlayer
-        url="https://servidorcadefi.inowu.dev/live/hls/respaldo.m3u8"
+        url="https://servidorcadefi.inowu.dev/live/hls/bif.m3u8"
         width="100%"
         loop={false}
         muted={false}

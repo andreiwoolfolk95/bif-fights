@@ -72,6 +72,7 @@ export default function PaymentComponent() {
       await onMerge(obj);
     } catch (error) {
       console.log(error);
+      toast.error("Ocurrió un error al procesar su pago");
       setLoading(false);
     }
   };
@@ -167,7 +168,7 @@ export default function PaymentComponent() {
         <button type="submit" onClick={handlePayment}>
           {!loading ? "Pagar" : <SpinnerLoader color="#fff" size={30} />}
         </button>
-        <img src="/assets/logos/logo.jpeg" alt="bif" />
+        <img src="/logo.png" alt="bif" />
       </form>
     </div>
   );
